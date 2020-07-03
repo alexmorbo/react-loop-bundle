@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Morbo\React\Redis;
+namespace Morbo\React\Loop;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
