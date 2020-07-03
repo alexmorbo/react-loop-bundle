@@ -19,7 +19,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="ReactRedis Test Suite">
+        <testsuite name="ReactLoop Test Suite">
             <directory>Tests</directory>
         </testsuite>
     </testsuites>

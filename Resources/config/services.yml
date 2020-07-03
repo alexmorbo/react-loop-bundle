@@ -1,4 +1,7 @@
 services:
+  _defaults:
+    public: true
+
   react.loop:
     class: Morbo\React\Loop\Service\Loop
     arguments: ["@service_container"]
