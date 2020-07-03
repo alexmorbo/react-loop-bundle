@@ -3,3 +3,5 @@ services:
     class: Morbo\React\Loop\Service\Loop
     arguments: ["@service_container"]
     public: true
+
+  Morbo\React\Loop\Service\Loop: '@react.loop'
