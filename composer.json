@@ -1,0 +1,36 @@
+{
+  "name": "alexmorbo/react-loop-bundle",
+  "description": "ReactPHP Service for event loop",
+  "keywords": ["reactphp", "eventloop", "asyncphp"],
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Morbo",
+      "email": "alex@morbo.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "symfony/framework-bundle": "^5.0",
+    "symfony/dependency-injection": "^5.0",
+    "symfony/yaml": "^5.0",
+    "react/event-loop": "^1.1"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Morbo\\React\\Loop\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.0.x-dev"
+    }
+  }
+}
