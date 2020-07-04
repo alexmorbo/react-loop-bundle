@@ -2,45 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Morbo\React\Loop;
+namespace Morbo\React\Loop\Tests;
 
 use Morbo\React\Loop\Service\Loop;
+use ReflectionClass;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\HttpKernel\Kernel;
 
 class ReactLoopTest extends KernelTestCase
 {
-    public function testDependencyInjection()
+    public function setUp(): void
     {
         self::bootKernel();
-        $container = self::$container;
-
-        $this->assertTrue($container->has('react.loop'), '"react.loop" is loaded');
-        $this->assertTrue($container->has(Loop::class), '"Loop::class" is loaded');
-    }
-}
-
-class TestingKernel extends Kernel
-{
-    public function __construct()
-    {
-        parent::__construct('test', true);
     }
 
-    public function registerBundles()
+    public function testDependencyInjection()
     {
-        return [
-            new ReactLoopBundle(),
-        ];
+        $this->assertTrue(self::$container->has('react.loop'), '"react.loop" is loaded');
+        $this->assertTrue(self::$container->has(Loop::class), '"Loop::class" is loaded');
     }
 
-    public function getCacheDir()
+    public function testTrait()
     {
-        return __DIR__.'/cache/'.spl_object_hash($this);
-    }
-
-    public function registerContainerConfiguration(LoaderInterface $loader)
-    {
+        $this->assertTrue(method_exists(self::$container->get(Loop::class), 'getLoop'));
     }
 }
